@@ -5,5 +5,5 @@ This is the code created by following along with the Elm tutorial located at [el
 ## Build JS version of Elm component
 
 ``` bash
-elm make src/<file>.elm --output <file>.js
+elm make src/<file>.elm --output bin/<file>.js
 ```

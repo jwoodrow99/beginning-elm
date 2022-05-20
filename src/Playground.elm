@@ -8,15 +8,24 @@ computeSpeed distance time =
 computeTime startTime endTime =
     endTime - startTime
 
-escapeEarth myVelocity mySpeed =
-  if myVelocity > 11.186 then
+escapeEarth myVelocity mySpeed fuelStatus =
+  let
+    escapeVelocityInKmPerSec =
+      1.186
+    orbitalSpeedInKmPerSec =
+      7.67
+    whereToLand =
+      if fuelStatus == "low" then
+        "Land on droneship"
+       else
+        "Land on launchpad"
+  in
+  if myVelocity > escapeVelocityInKmPerSec then
     "Godspeed"
-
-  else if mySpeed == 7.67 then
+  else if mySpeed == orbitalSpeedInKmPerSec then
     "Stay in orbit"
-
   else
-    "Come back"
+    whereToLand
 
 add a b =
   a + b
@@ -48,5 +57,9 @@ divide e f =
 --     |> String.fromFloat
 --     |> Html.text
 
+-- main =
+--   Html.text <| String.fromFloat <| add 5 <| multiply 10 <| divide 30 10
+
 main =
-  Html.text <| String.fromFloat <| add 5 <| multiply 10 <| divide 30 10
+  escapeEarth 1 6.7 "low"
+    |> Html.text

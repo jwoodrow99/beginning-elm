@@ -13,3 +13,10 @@ elm make src/<file>.elm --output bin/<file>.js
 ``` bash
 elm reactor
 ```
+
+## Run the Elm REPL
+
+``` bash
+elm repl  # Start
+> :exit   # Stop
+```

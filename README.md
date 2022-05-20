@@ -7,3 +7,9 @@ This is the code created by following along with the Elm tutorial located at [el
 ``` bash
 elm make src/<file>.elm --output bin/<file>.js
 ```
+
+## Start development server
+
+``` bash
+elm reactor
+```
